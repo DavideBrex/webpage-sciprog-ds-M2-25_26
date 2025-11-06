@@ -27,7 +27,7 @@
     "\n",
     "## Equipment\n",
     "\n",
-    "Even if the lessons are provided in a standard room, we will try to keep the form of practical lessons held in a computer science lab. For this reason, **students are highly encouraged to bring their personal laptop to work independently in solving the exercises**.\n",
+    "The lessons will take place in the computer science lab and follow a practical, hands-on format. Students are encouraged to bring their personal laptops and can work using both their own devices and the lab computers. However, since the exam will be conducted on the lab computers, **students should make sure to practice using those as well to become familiar with the setup and environment**.\n",
     "\n",
     "## Acknowledgements\n",
     "\n",
