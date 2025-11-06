@@ -1,0 +1,17 @@
+.. Home 
+Module 2 - Algorithms and Data Structures
+======
+**November-December 2025**
+
+Material for the practical class of Scientific Programming (Module 2). Master of Data Science - University of Trento
+
+Lecturer: Davide Bressan
+
+Email: davide.bressan-1@unitn.it
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+        Home <notebooks/index.ipynb>
+        Practical 1 <notebooks/M2_practical1.ipynb>
