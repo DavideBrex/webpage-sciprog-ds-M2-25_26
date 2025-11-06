@@ -14,9 +14,9 @@
     "\n",
     "Material for the practical class of Scientific Programming (Module 2). Master of Data Science - University of Trento \n",
     "\n",
-    "Lecturer: Riccardo Scandino \n",
+    "Lecturer: Davide Bressan\n",
     "\n",
-    "Email: riccardo.scandino@unitn.it\n",
+    "Email: davide.bressan-1@unitn.it\n",
     "\n",
     "## Timetable and lecture rooms\n",
     "\n",
@@ -31,7 +31,7 @@
     "\n",
     "## Acknowledgements\n",
     "\n",
-    "Thanks to **David Leoni, Stefano Teso, Luca Bianco, and Erik Dassi** that contributed to develop this resource over the years. "
+    "Thanks to **Riccardo Scandino, David Leoni, Stefano Teso, Luca Bianco, and Erik Dassi** that contributed to develop this resource over the years. "
    ]
   }
  ],
