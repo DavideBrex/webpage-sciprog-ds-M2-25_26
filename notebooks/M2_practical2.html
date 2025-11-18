@@ -23,6 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Module 2, Practical 4" href="M2_practical4.html" />
     <link rel="prev" title="Module 2, Practical 1" href="M2_practical1.html" /> 
 </head>
 
@@ -65,6 +66,23 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Practical 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Unit-testing">Unit testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Measuring-time">Measuring time</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Measuring-memory">Measuring memory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Exercise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical4.html">     Practical 4</a></li>
 </ul>
 
         </div>
@@ -161,7 +179,7 @@ Cell <span class="ansi-green-fg">In[2], line 1</span>
 <span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sumOfTwo</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">3</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">baduser</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
 
 Cell <span class="ansi-green-fg">In[1], line 2</span>, in <span class="ansi-cyan-fg">sumOfTwo</span><span class="ansi-blue-fg">(x, y)</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">sumOfTwo</span>(x, y):
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span><span style="color: rgb(188,188,188)"> </span><span style="color: rgb(0,0,255)">sumOfTwo</span>(x, y):
 <span class="ansi-green-fg">----&gt; 2</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">x</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">+</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">y</span>
 
 <span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
@@ -173,7 +191,7 @@ Cell <span class="ansi-green-fg">In[1], line 2</span>, in <span class="ansi-cyan
 <p>Unit testing refers to tests that verify the functionality of a code unit, typically a function. Asserts are a quick way to test a piece of code but they don’t provide us with much detail (e.g. how different is the result we obtained from the expected one?). Luckily, Python provides us with a specific module for unit testing: <em>unittest</em> (see <a class="reference external" href="https://docs.python.org/3/library/unittest.html">here the doc</a>).</p>
 <p><em>unittest</em> is an OOP-based module - you need to subclass the <code class="docutils literal notranslate"><span class="pre">unittest.TestCase</span></code> class:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
@@ -374,8 +392,8 @@ Fibonacci(5): [1, 1, 2, 3, 5]
 <div class="line">Python provides the <code class="docutils literal notranslate"><span class="pre">timeit</span></code> package to measure the execution time of small snippets of code.</div>
 <div class="line">Execution of the snippet is repeated multiple times (<code class="docutils literal notranslate"><span class="pre">number</span></code> parameter) to allow obtaining an estimate also for the quickest snippets :</div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -414,13 +432,6 @@ Fibonacci(5): [1, 1, 2, 3, 5]
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_M2_practical2_15_0.png" src="../_images/notebooks_M2_practical2_15_0.png" />
-</div>
-</div>
 <img alt="fibonacciTimes" src="../_images/fibonacciTimes.png" />
 <section id="id1">
 <h3>Exercise<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
@@ -429,8 +440,8 @@ Fibonacci(5): [1, 1, 2, 3, 5]
 <div class="line">Test the execution times of the two fibonacci functions with <code class="docutils literal notranslate"><span class="pre">n</span></code> ranging from 1 to 20 and plot the two distributions</div>
 </div>
 <details><summary><p>Show/Hide solution</p>
-</summary><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</summary><div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -476,13 +487,6 @@ Fibonacci(5): [1, 1, 2, 3, 5]
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_M2_practical2_18_0.png" src="../_images/notebooks_M2_practical2_18_0.png" />
-</div>
-</div>
 <img alt="fibonacciTimesRec" src="../_images/fibonacciTimesRec.png" />
 </details></section>
 </section>
@@ -491,7 +495,7 @@ Fibonacci(5): [1, 1, 2, 3, 5]
 <p>Memory used by an object, function or full Python scripts can be measured by different means.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">sys.getsizeof</span></code> method is one of them:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -567,6 +571,7 @@ Fibonacci(5): [1, 1, 2, 3, 5]
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="M2_practical1.html" class="btn btn-neutral float-left" title="Module 2, Practical 1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="M2_practical4.html" class="btn btn-neutral float-right" title="Module 2, Practical 4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
