@@ -471,7 +471,7 @@ Cell <span class="ansi-green-fg">In[9], line 7</span>
 <p>and compare the results with what would give python’s built-in <code class="docutils literal notranslate"><span class="pre">set</span></code> data structure.</p>
 <details><summary><p>Show/Hide Implementation</p>
 </summary><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MySet</span><span class="p">:</span>
@@ -522,11 +522,10 @@ Cell <span class="ansi-green-fg">In[9], line 7</span>
         <span class="n">elements</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">other</span><span class="p">:</span>
             <span class="n">elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
-        <span class="n">S</span> <span class="o">=</span> <span class="n">MySet</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
-        <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">S2</span> <span class="o">=</span> <span class="n">MySet</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-            <span class="n">S</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">S</span>
+            <span class="n">S2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">S2</span>
 
     <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;elements in both sets&quot;&quot;&quot;</span>

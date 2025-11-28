@@ -442,7 +442,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": null,
    "metadata": {},
    "outputs": [
     {
@@ -530,11 +530,10 @@
     "        elements = []\n",
     "        for el in other:\n",
     "            elements.append(el)\n",
-    "        S = MySet(elements)\n",
-    "        i=0\n",
+    "        S2 = MySet(elements)\n",
     "        for el in self:\n",
-    "            S.add(el)\n",
-    "        return S\n",
+    "            S2.add(el)\n",
+    "        return S2\n",
     "\n",
     "    def intersection(self, other):\n",
     "        \"\"\"elements in both sets\"\"\"\n",
@@ -1972,7 +1971,7 @@
  "metadata": {
   "celltoolbar": "Edit Metadata",
   "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
+   "display_name": "3.10.14",
    "language": "python",
    "name": "python3"
   },
@@ -1986,7 +1985,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.10.13"
+   "version": "3.10.14"
   }
  },
  "nbformat": 4,
