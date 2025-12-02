@@ -1166,8 +1166,8 @@ Node_6 -- 1 --&gt; Node_6
 </ul>
 <p>Test your methods with the test code from the previous exercise, changing <code class="docutils literal notranslate"><span class="pre">DiGraphAsAdjacencyMatrix</span></code> with <code class="docutils literal notranslate"><span class="pre">DiGraphLL</span></code>.</p>
 <details><summary><p>Show/Hide Solution</p>
-</summary><div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</summary><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DiGraphLL</span><span class="p">:</span>
@@ -1350,6 +1350,52 @@ Node_6 -- 1 --&gt; Node_6
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Node_1 -- 0.5 --&gt; Node_2
+Node_1 -- 1 --&gt; Node_6
+Node_2 -- 0.5 --&gt; Node_3
+Node_2 -- 1 --&gt; Node_6
+Node_3 -- 0.5 --&gt; Node_4
+Node_3 -- 1 --&gt; Node_6
+Node_4 -- 0.5 --&gt; Node_5
+Node_4 -- 1 --&gt; Node_6
+Node_5 -- 0.5 --&gt; Node_1
+Node_5 -- 1 --&gt; Node_6
+Node_6 -- 1 --&gt; Node_6
+
+
+Nodes connected to Node_6:
+[&#39;Node_1&#39;, &#39;Node_2&#39;, &#39;Node_3&#39;, &#39;Node_4&#39;, &#39;Node_5&#39;, &#39;Node_6&#39;]
+
+Nodes connected to Node_4:
+[&#39;Node_3&#39;, &#39;Node_5&#39;, &#39;Node_6&#39;]
+
+Nodes connected to Node_3:
+[&#39;Node_2&#39;, &#39;Node_4&#39;, &#39;Node_6&#39;]
+Edges outgoing from Node_3:
+[(&#39;Node_3&#39;, &#39;Node_4&#39;, 0.5), (&#39;Node_3&#39;, &#39;Node_6&#39;, 1)]
+Edges incoming to Node_3:
+[(&#39;Node_2&#39;, &#39;Node_3&#39;, 0.5)]
+
+Edges incoming to Node_6:
+[(&#39;Node_1&#39;, &#39;Node_6&#39;, 1), (&#39;Node_2&#39;, &#39;Node_6&#39;, 1), (&#39;Node_3&#39;, &#39;Node_6&#39;, 1), (&#39;Node_4&#39;, &#39;Node_6&#39;, 1), (&#39;Node_5&#39;, &#39;Node_6&#39;, 1), (&#39;Node_6&#39;, &#39;Node_6&#39;, 1)]
+
+Edges incoming to Node_743432:
+[]
+
+All edges:
+[(&#39;Node_1&#39;, &#39;Node_2&#39;, 0.5), (&#39;Node_1&#39;, &#39;Node_6&#39;, 1), (&#39;Node_2&#39;, &#39;Node_3&#39;, 0.5), (&#39;Node_2&#39;, &#39;Node_6&#39;, 1), (&#39;Node_3&#39;, &#39;Node_4&#39;, 0.5), (&#39;Node_3&#39;, &#39;Node_6&#39;, 1), (&#39;Node_4&#39;, &#39;Node_5&#39;, 0.5), (&#39;Node_4&#39;, &#39;Node_6&#39;, 1), (&#39;Node_5&#39;, &#39;Node_1&#39;, 0.5), (&#39;Node_5&#39;, &#39;Node_6&#39;, 1), (&#39;Node_6&#39;, &#39;Node_6&#39;, 1)]
+
+Is (Node_4,Node_5) there? True
+Is (Node_4,Node_3) there? False
+Is (Node_3,Node_4) there? True
+Is (Node_6,Node_6) there? True
+</pre></div></div>
+</div>
 <p>Download the complete source file: <a class="reference external" href="data_structures/DiGraphLLEx3.py">DiGraphLLEx3.py</a></p>
 </details><ol class="arabic simple" start="4">
 <li><p>Extend the <code class="docutils literal notranslate"><span class="pre">DiGraphLL</span></code> class creating a subclass <code class="docutils literal notranslate"><span class="pre">DiGraphLLAnalyzer</span></code> by adding the following methods:</p></li>
@@ -1400,10 +1446,9 @@ Node_6 -- 1 --&gt; Node_6
     <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">hasPath</span><span class="p">(</span><span class="s2">&quot;Node_alone2&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_alone&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Solution:</p>
 <details><summary><p>Show/Hide Solution</p>
-</details><div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</details><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
@@ -1642,6 +1687,38 @@ Node_6 -- 1 --&gt; Node_6
     <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">hasPath</span><span class="p">(</span><span class="s2">&quot;Node_alone2&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_alone&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Top connected (outgoing):
+[&#39;Node_1&#39;, &#39;Node_2&#39;, &#39;Node_3&#39;, &#39;Node_4&#39;, &#39;Node_5&#39;]
+Top connected (incoming):
+[&#39;Node_6&#39;]
+
+Adding edge Node_5 -- 0.5 --&gt; Node_5
+Top connected (outgoing):
+[&#39;Node_5&#39;]
+
+Are Node_1 and Node_4 connected?
+True
+
+Removing Node_6
+Top connected (outgoing):
+[&#39;Node_5&#39;]
+Top connected (incoming):
+[&#39;Node_5&#39;]
+
+Adding Node_alone and Node_alone2
+Adding Node_alone --&gt; Node_alone2
+
+Are Node_1 and Node_alone2 connected?
+False
+Are Node_alone2 and Node_alone connected?
+True
+</pre></div></div>
 </div>
 <p>Download the complete source file: <a class="reference external" href="data_structures/DiGraphLLAnalyzer.py">DiGraphLLAnalyzer.py</a></p>
 </details></section>
