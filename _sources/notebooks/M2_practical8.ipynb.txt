@@ -1405,46 +1405,16 @@
     "    print(G.hasPath(\"Node_alone2\", \"Node_alone\"))\n",
     "```\n",
     "\n",
-    "<details><summary>Show/Hide Solution</details>"
+    "Solution:\n",
+    "\n",
+    "<details><summary>Show/Hide Solution</details>\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Top connected (outgoing):\n",
-      "['Node_1', 'Node_2', 'Node_3', 'Node_4', 'Node_5']\n",
-      "Top connected (incoming):\n",
-      "['Node_6']\n",
-      "\n",
-      "Adding edge Node_5 -- 0.5 --> Node_5\n",
-      "Top connected (outgoing):\n",
-      "['Node_5']\n",
-      "\n",
-      "Are Node_1 and Node_4 connected?\n",
-      "True\n",
-      "\n",
-      "Removing Node_6\n",
-      "Top connected (outgoing):\n",
-      "['Node_5']\n",
-      "Top connected (incoming):\n",
-      "['Node_5']\n",
-      "\n",
-      "Adding Node_alone and Node_alone2\n",
-      "Adding Node_alone --> Node_alone2\n",
-      "\n",
-      "Are Node_1 and Node_alone2 connected?\n",
-      "False\n",
-      "Are Node_alone2 and Node_alone connected?\n",
-      "True\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "from collections import deque\n",
     "\n",

@@ -1400,9 +1400,10 @@ Node_6 -- 1 --&gt; Node_6
     <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">hasPath</span><span class="p">(</span><span class="s2">&quot;Node_alone2&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_alone&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
+<p>Solution:</p>
 <details><summary><p>Show/Hide Solution</p>
-</details><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</details><div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
@@ -1641,38 +1642,6 @@ Node_6 -- 1 --&gt; Node_6
     <span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">hasPath</span><span class="p">(</span><span class="s2">&quot;Node_alone2&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_alone&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Top connected (outgoing):
-[&#39;Node_1&#39;, &#39;Node_2&#39;, &#39;Node_3&#39;, &#39;Node_4&#39;, &#39;Node_5&#39;]
-Top connected (incoming):
-[&#39;Node_6&#39;]
-
-Adding edge Node_5 -- 0.5 --&gt; Node_5
-Top connected (outgoing):
-[&#39;Node_5&#39;]
-
-Are Node_1 and Node_4 connected?
-True
-
-Removing Node_6
-Top connected (outgoing):
-[&#39;Node_5&#39;]
-Top connected (incoming):
-[&#39;Node_5&#39;]
-
-Adding Node_alone and Node_alone2
-Adding Node_alone --&gt; Node_alone2
-
-Are Node_1 and Node_alone2 connected?
-False
-Are Node_alone2 and Node_alone connected?
-True
-</pre></div></div>
 </div>
 <p>Download the complete source file: <a class="reference external" href="data_structures/DiGraphLLAnalyzer.py">DiGraphLLAnalyzer.py</a></p>
 </details></section>
