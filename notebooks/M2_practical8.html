@@ -960,16 +960,38 @@ True
 <div class="line-block">
 <div class="line">Let’s see how we can implement a <em>directed weighted graph</em> as an <strong>adjacency linked list</strong> in Python.</div>
 <div class="line">We will use a dictionary to represent nodes and corresponding connections.</div>
-<div class="line">Therefore, we are not going to implement a linked list, but rather a <strong>dictionary of outgoing edges</strong>. That is, each node N is a dictionary of edges (the key of the dictionary is the node to which N is connected and the value is the weight). Example:</div>
+<div class="line">Therefore, we are not going to implement a linked list, but rather a <strong>dictionary of outgoing edges</strong>. That is, each node N is a dictionary of edges (the key of the dictionary is the node to which N is connected and the value is the weight).</div>
 </div>
+<p><em>Example:</em></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{
-    &quot;Node_1&quot;: { &quot;Node_2&quot;: 0.5, &quot;Node_6&quot;: 1 },
-    &quot;Node_2&quot;: { &quot;Node_3&quot;: 0.5, &quot;Node_6&quot;: 1 },
-    &quot;Node_3&quot;: { &quot;Node_4&quot;: 0.5, &quot;Node_6&quot;: 1 },
-    ...
+    &quot;Node_1&quot;: {
+        &quot;Node_2&quot;: 0.5,
+        &quot;Node_6&quot;: 1
+    },
+    &quot;Node_2&quot;: {
+        &quot;Node_3&quot;: 0.5,
+        &quot;Node_6&quot;: 1
+    },
+    &quot;Node_3&quot;: {
+        &quot;Node_4&quot;: 0.5,
+        &quot;Node_6&quot;: 1
+    },
+    &quot;Node_4&quot;: {
+        &quot;Node_5&quot;: 0.5,
+        &quot;Node_6&quot;: 1
+    },
+    &quot;Node_5&quot;: {
+        &quot;Node_1&quot;: 0.5,
+        &quot;Node_6&quot;: 1
+    },
+    &quot;Node_6&quot;: {
+        &quot;Node_6&quot;: 1
+    }
 }
 </pre></div>
 </div>
+<p>The nested dictionary above (before the addition of Node 7) represents the following graph:</p>
+<img alt="../_images/star.png" src="../_images/star.png" />
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -1150,8 +1172,6 @@ Node_6 -- 1 --&gt; Node_6
 
 </pre></div></div>
 </div>
-<p>The nested dictionary above represents the following graph:</p>
-<img alt="../_images/star.png" src="../_images/star.png" />
 <p>Download the complete source file: <a class="reference external" href="data_structures/DiGraphLL.py">DiGraphLL.py</a></p>
 <section id="id1">
 <h3>Exercises<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
