@@ -121,7 +121,7 @@
 <p>As in the case of Trees, two ways exist to perform a visit of a graph: <strong>depth-first</strong> and <strong>breadth-first</strong> search.</p>
 <p>As said above, the base class that we will extend is <code class="docutils literal notranslate"><span class="pre">DiGraphLL</span></code>, whose code is reported below as a reminder:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="k">class</span> <span class="nc">DiGraphLL</span><span class="p">:</span>
@@ -262,6 +262,11 @@
 <div class="line">We have two possible versions of this algorithm: <strong>pre-order</strong> and <strong>post-order</strong> DFS.</div>
 <div class="line">This algorithm makes use of a stack (rather <em>implicit</em>, as done below by using recursion) or <em>explicitly</em>.</div>
 </div>
+<p>Difference between the two ways:</p>
+<p><strong>Pre-order DFS</strong></p>
+<p>You process the node before exploring its neighbors. In code, this means the “visit action” (print, store, compute, etc.) happens right after the node is discovered and before recursively visiting adjacent nodes.</p>
+<p><strong>Post-order DFS</strong></p>
+<p>You process the node after exploring all its neighbors. The visit action happens when recursion is returning, meaning after all reachable nodes from this node have been fully explored.</p>
 <p><strong>Example:</strong> Let’s implement DFS in the <code class="docutils literal notranslate"><span class="pre">DiGraphLLAnalyzer</span></code> class we implemented in the previous lab.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
