@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 2, Extra exercises &mdash; sciprog-ds-M2-25_26  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Module 2, Practical 9" href="M2_practical9.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            sciprog-ds-M2-25_26
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">     Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical1.html">     Practical 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical2.html">     Practical 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical3.html">     Practical 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical4.html">     Practical 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical5.html">     Practical 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical6.html">     Practical 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical7.html">     Practical 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical8.html">     Practical 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical9.html">     Practical 9</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Extra exercises</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Class-Definitions-(BinaryTree-and-DiGraphLL)">Class Definitions (BinaryTree and DiGraphLL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-1-—-Count-the-Number-of-Nodes-in-a-Tree">Exercise 1 — Count the Number of Nodes in a Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-2-—-Check-Whether-a-Value-Exists-in-the-Tree">Exercise 2 — Check Whether a Value Exists in the Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-3-—-Compute-the-Height-of-the-Tree">Exercise 3 — Compute the Height of the Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-4.1-—-Check-if-a-node-has-a-self-edge-in-a-Graph">Exercise 4.1 — Check if a node has a self edge in a Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-4.2-—-Check-if-a-node-is-isolated-(no-edges-with-other-nodes)">Exercise 4.2 — Check if a node is isolated (no edges with other nodes)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sciprog-ds-M2-25_26</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Module 2, Extra exercises</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/notebooks/M2_extra_exercises.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Module-2,-Extra-exercises">
+<h1>Module 2, Extra exercises<a class="headerlink" href="#Module-2,-Extra-exercises" title="Link to this heading"></a></h1>
+<p>Find below random exercises to practice more with the sorting and the data structures we have seen during the practical lessons. Solutions will be provided in a few days.</p>
+<section id="Class-Definitions-(BinaryTree-and-DiGraphLL)">
+<h2>Class Definitions (BinaryTree and DiGraphLL)<a class="headerlink" href="#Class-Definitions-(BinaryTree-and-DiGraphLL)" title="Link to this heading"></a></h2>
+<p>These classes are provided for the exercises.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BinaryTree class</span>
+<span class="k">class</span> <span class="nc">BinaryTree</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__parent</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">getValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__data</span>
+    <span class="k">def</span> <span class="nf">setValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newValue</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="o">=</span> <span class="n">newValue</span>
+
+    <span class="k">def</span> <span class="nf">getParent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parent</span>
+    <span class="k">def</span> <span class="nf">setParent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__parent</span> <span class="o">=</span> <span class="n">tree</span>
+
+    <span class="k">def</span> <span class="nf">getRight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__right</span>
+    <span class="k">def</span> <span class="nf">getLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__left</span>
+
+    <span class="k">def</span> <span class="nf">insertRight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">=</span> <span class="n">tree</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">setParent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">insertLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">=</span> <span class="n">tree</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">setParent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">deleteRight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">deleteLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">printTree</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="n">cur</span> <span class="o">=</span> <span class="n">root</span>
+    <span class="c1">#each element is a node and a depth</span>
+    <span class="c1">#depth is used to format prints (with tabs)</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[(</span><span class="n">cur</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>
+    <span class="n">tabs</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">cur</span><span class="p">,</span> <span class="n">lev</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="c1">#print(&quot;{}{}&quot;.format(&quot;\t&quot;*lev, cur.getValue()))</span>
+        <span class="k">if</span> <span class="n">cur</span><span class="o">.</span><span class="n">getRight</span><span class="p">()</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2"> (r)-&gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">*</span><span class="n">lev</span><span class="p">,</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getValue</span><span class="p">(),</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getRight</span><span class="p">()</span><span class="o">.</span><span class="n">getValue</span><span class="p">()))</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur</span><span class="o">.</span><span class="n">getRight</span><span class="p">(),</span> <span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">cur</span><span class="o">.</span><span class="n">getLeft</span><span class="p">()</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2"> (l)-&gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">*</span><span class="n">lev</span><span class="p">,</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getValue</span><span class="p">(),</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getLeft</span><span class="p">()</span><span class="o">.</span><span class="n">getValue</span><span class="p">()))</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur</span><span class="o">.</span><span class="n">getLeft</span><span class="p">(),</span> <span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Directed graph class</span>
+<span class="k">class</span> <span class="nc">DiGraphLL</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">insertNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">test</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">insertEdge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">test1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node2</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">test</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">test1</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">test</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node1</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node2</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">test</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">exStr</span><span class="o">=</span> <span class="s2">&quot;Edge </span><span class="si">{}</span><span class="s2"> --&gt; </span><span class="si">{}</span><span class="s2"> already existing.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span><span class="n">node2</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">exStr</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node1</span><span class="p">][</span><span class="n">node2</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span>
+
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">]:</span>
+
+                <span class="n">ret</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> -- </span><span class="si">{}</span><span class="s2"> --&gt; </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span>
+                                                  <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">edge</span><span class="p">]),</span>
+                                                  <span class="nb">str</span><span class="p">(</span><span class="n">edge</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+</div>
+</div>
+<section id="Exercise-1-—-Count-the-Number-of-Nodes-in-a-Tree">
+<h3>Exercise 1 — Count the Number of Nodes in a Tree<a class="headerlink" href="#Exercise-1-—-Count-the-Number-of-Nodes-in-a-Tree" title="Link to this heading"></a></h3>
+<p>The goal of this exercise is to understand how to traverse a binary tree both recursively and iteratively. You are asked to implement a method in the BinaryTree class that returns the total number of nodes in the subtree rooted at the current node using recursion. Then, implement a second version that computes the same value without using recursion, relying instead on an explicit stack or queue. Both methods should return the same result when tested.</p>
+<p>Implement recursive and iterative versions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def countNodes(self):
+    pass
+
+def countNodes_iter(self):
+    pass
+</pre></div>
+</div>
+<p>Test if you implemented it right with the code below:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Autograding test for Exercise 1</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="n">b</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">insertLeft</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="n">root</span><span class="o">.</span><span class="n">insertRight</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="n">root</span><span class="o">.</span><span class="n">countNodes</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span>
+    <span class="k">assert</span> <span class="n">root</span><span class="o">.</span><span class="n">countNodes_iter</span><span class="p">()</span> <span class="o">==</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Exercise 1 passed&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Exercise 1 failed:&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Exercise 1 failed: &#39;BinaryTree&#39; object has no attribute &#39;countNodes&#39;
+</pre></div></div>
+</div>
+</section>
+<section id="Exercise-2-—-Check-Whether-a-Value-Exists-in-the-Tree">
+<h3>Exercise 2 — Check Whether a Value Exists in the Tree<a class="headerlink" href="#Exercise-2-—-Check-Whether-a-Value-Exists-in-the-Tree" title="Link to this heading"></a></h3>
+<p>This exercise focuses on searching within a binary tree. You should implement a method that returns True if a given value exists anywhere in the tree, using recursion to traverse the nodes. Then, create a second version that performs the same search without recursion, using an explicit stack or queue to explore the tree. Both versions should correctly identify whether the value is present, even if every node needs to be checked.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def contains(self, value):
+    pass
+
+def contains_iter(self, value):
+    pass
+</pre></div>
+</div>
+<p>Test the output with the code below:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">insertLeft</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">insertRight</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>       <span class="c1"># Expected output: True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">contains_iter</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Expected output: False</span>
+<br/></pre></div>
+</div>
+</div>
+</section>
+<section id="Exercise-3-—-Compute-the-Height-of-the-Tree">
+<h3>Exercise 3 — Compute the Height of the Tree<a class="headerlink" href="#Exercise-3-—-Compute-the-Height-of-the-Tree" title="Link to this heading"></a></h3>
+<p>Compute the height of a binary tree where a leaf node has height one and an empty subtree has height zero. Implement a recursive method that calculates the height and an iterative method using a stack or queue to track node depth. Both methods should return the same height.</p>
+<p>Example: A tree with a root node and two children has height 2. Calling the method on the root node should return 2.</p>
+<p>Template for your code:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def height(self):
+    pass
+
+def height_iter(self):
+    pass
+</pre></div>
+</div>
+<p>Example check:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">BinaryTree</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">insertLeft</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">insertRight</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">height</span><span class="p">())</span>       <span class="c1"># Expected output: 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">height_iter</span><span class="p">())</span>  <span class="c1"># Expected output: 2</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Exercise-4.1-—-Check-if-a-node-has-a-self-edge-in-a-Graph">
+<h3>Exercise 4.1 — Check if a node has a self edge in a Graph<a class="headerlink" href="#Exercise-4.1-—-Check-if-a-node-has-a-self-edge-in-a-Graph" title="Link to this heading"></a></h3>
+<p>Consider the DiGraphLL class provided above. Use this code below to generate the following graph:</p>
+<img alt="Screenshot from 2025-12-05 11-47-47.png" src="notebooks/attachment:Screenshot%20from%202025-12-05%2011-47-47.png" />
+<p>Code:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">DiGraphLL</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="s2">&quot;Node_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">insertNode</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">G</span><span class="o">.</span><span class="n">insertEdge</span><span class="p">(</span><span class="s2">&quot;Node_2&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_1&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">insertEdge</span><span class="p">(</span><span class="s2">&quot;Node_1&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_2&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">insertEdge</span><span class="p">(</span><span class="s2">&quot;Node_1&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_4&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">insertEdge</span><span class="p">(</span><span class="s2">&quot;Node_2&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_5&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">insertEdge</span><span class="p">(</span><span class="s2">&quot;Node_6&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_5&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">insertEdge</span><span class="p">(</span><span class="s2">&quot;Node_4&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_5&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">insertEdge</span><span class="p">(</span><span class="s2">&quot;Node_6&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_6&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">insertEdge</span><span class="p">(</span><span class="s2">&quot;Node_7&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_7&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">insertEdge</span><span class="p">(</span><span class="s2">&quot;Node_4&quot;</span><span class="p">,</span> <span class="s2">&quot;Node_4&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Size is: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nodes: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Size is: 7
+Nodes: {&#39;Node_1&#39;: {&#39;Node_2&#39;: 2, &#39;Node_4&#39;: 5}, &#39;Node_2&#39;: {&#39;Node_1&#39;: 7, &#39;Node_5&#39;: 6}, &#39;Node_3&#39;: {}, &#39;Node_4&#39;: {&#39;Node_5&#39;: 15, &#39;Node_4&#39;: 4}, &#39;Node_5&#39;: {}, &#39;Node_6&#39;: {&#39;Node_5&#39;: 3, &#39;Node_6&#39;: 2}, &#39;Node_7&#39;: {&#39;Node_7&#39;: 4}}
+</pre></div></div>
+</div>
+<p>Implement a method called <em>checkSelfEdge()</em> in the DiGraphLL class that takes a node as input and returns True if the node has an edge pointing to itself, and False otherwise. Make sure to first verify that the node exists in the graph.</p>
+<p>Hint: Use the adjacency dictionary to determine if the node has an outgoing edge to itself.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def checkSelfEdge(self, node):
+    pass
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check for self edge --&gt; </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node_10:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">checkSelfEdge</span><span class="p">(</span><span class="s2">&quot;Node_10&quot;</span><span class="p">))</span> <span class="c1">#should return &quot;node not found&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node_2:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">checkSelfEdge</span><span class="p">(</span><span class="s2">&quot;Node_2&quot;</span><span class="p">))</span> <span class="c1">#should return False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node_6:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">checkSelfEdge</span><span class="p">(</span><span class="s2">&quot;Node_6&quot;</span><span class="p">))</span> <span class="c1">#should return True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node_7:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">checkSelfEdge</span><span class="p">(</span><span class="s2">&quot;Node_7&quot;</span><span class="p">))</span> <span class="c1">#should return True</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Exercise-4.2-—-Check-if-a-node-is-isolated-(no-edges-with-other-nodes)">
+<h3>Exercise 4.2 — Check if a node is isolated (no edges with other nodes)<a class="headerlink" href="#Exercise-4.2-—-Check-if-a-node-is-isolated-(no-edges-with-other-nodes)" title="Link to this heading"></a></h3>
+<p>Implement a method called <em>isolatedNodes()</em> in the DiGraphLL class that returns a list of all nodes that are completely isolated from the graph. A node is considered isolated if it has no incoming or outgoing edges to other nodes. Self-loops (edges from the node to itself) should not count as connections: nodes with self-loops are still considered isolated.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def isolatedNodes(self):
+    pass
+</pre></div>
+</div>
+<p>Test with:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Isolated nodes:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">isolatedNodes</span><span class="p">())</span>
+
+<span class="k">assert</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">isolatedNodes</span><span class="p">()</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;Node_3&#39;</span><span class="p">,</span> <span class="s1">&#39;Node_7&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="M2_practical9.html" class="btn btn-neutral float-left" title="Module 2, Practical 9" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Davide Bressan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
