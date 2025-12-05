@@ -58,14 +58,12 @@
 <li class="toctree-l1"><a class="reference internal" href="M2_practical8.html">     Practical 8</a></li>
 <li class="toctree-l1"><a class="reference internal" href="M2_practical9.html">     Practical 9</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">     Extra exercises</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Class-Definitions-(BinaryTree-and-DiGraphLL)">Class Definitions (BinaryTree and DiGraphLL)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Exercise-1-—-Count-the-Number-of-Nodes-in-a-Tree">Exercise 1 — Count the Number of Nodes in a Tree</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Exercise-2-—-Check-Whether-a-Value-Exists-in-the-Tree">Exercise 2 — Check Whether a Value Exists in the Tree</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Exercise-3-—-Compute-the-Height-of-the-Tree">Exercise 3 — Compute the Height of the Tree</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Exercise-4.1-—-Check-if-a-node-has-a-self-edge-in-a-Graph">Exercise 4.1 — Check if a node has a self edge in a Graph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Exercise-4.2-—-Check-if-a-node-is-isolated-(no-edges-with-other-nodes)">Exercise 4.2 — Check if a node is isolated (no edges with other nodes)</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#Class-Definitions-(BinaryTree-and-DiGraphLL)">Class Definitions (BinaryTree and DiGraphLL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise-1-—-Count-the-Number-of-Nodes-in-a-Tree">Exercise 1 — Count the Number of Nodes in a Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise-2-—-Check-Whether-a-Value-Exists-in-the-Tree">Exercise 2 — Check Whether a Value Exists in the Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise-3-—-Compute-the-Height-of-the-Tree">Exercise 3 — Compute the Height of the Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise-4.1-—-Check-if-a-node-has-a-self-edge-in-a-Graph">Exercise 4.1 — Check if a node has a self edge in a Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise-4.2-—-Check-if-a-node-is-isolated-(no-edges-with-other-nodes)">Exercise 4.2 — Check if a node is isolated (no edges with other nodes)</a></li>
 </ul>
 </li>
 </ul>
@@ -214,8 +212,9 @@
 </pre></div>
 </div>
 </div>
+</section>
 <section id="Exercise-1-—-Count-the-Number-of-Nodes-in-a-Tree">
-<h3>Exercise 1 — Count the Number of Nodes in a Tree<a class="headerlink" href="#Exercise-1-—-Count-the-Number-of-Nodes-in-a-Tree" title="Link to this heading"></a></h3>
+<h2>Exercise 1 — Count the Number of Nodes in a Tree<a class="headerlink" href="#Exercise-1-—-Count-the-Number-of-Nodes-in-a-Tree" title="Link to this heading"></a></h2>
 <p>The goal of this exercise is to understand how to traverse a binary tree both recursively and iteratively. You are asked to implement a method in the BinaryTree class that returns the total number of nodes in the subtree rooted at the current node using recursion. Then, implement a second version that computes the same value without using recursion, relying instead on an explicit stack or queue. Both methods should return the same result when tested.</p>
 <p>Implement recursive and iterative versions:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def countNodes(self):
@@ -226,8 +225,8 @@ def countNodes_iter(self):
 </pre></div>
 </div>
 <p>Test if you implemented it right with the code below:</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Autograding test for Exercise 1</span>
@@ -244,17 +243,9 @@ def countNodes_iter(self):
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Exercise 1 failed: &#39;BinaryTree&#39; object has no attribute &#39;countNodes&#39;
-</pre></div></div>
-</div>
 </section>
 <section id="Exercise-2-—-Check-Whether-a-Value-Exists-in-the-Tree">
-<h3>Exercise 2 — Check Whether a Value Exists in the Tree<a class="headerlink" href="#Exercise-2-—-Check-Whether-a-Value-Exists-in-the-Tree" title="Link to this heading"></a></h3>
+<h2>Exercise 2 — Check Whether a Value Exists in the Tree<a class="headerlink" href="#Exercise-2-—-Check-Whether-a-Value-Exists-in-the-Tree" title="Link to this heading"></a></h2>
 <p>This exercise focuses on searching within a binary tree. You should implement a method that returns True if a given value exists anywhere in the tree, using recursion to traverse the nodes. Then, create a second version that performs the same search without recursion, using an explicit stack or queue to explore the tree. Both versions should correctly identify whether the value is present, even if every node needs to be checked.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def contains(self, value):
     pass
@@ -281,7 +272,7 @@ def contains_iter(self, value):
 </div>
 </section>
 <section id="Exercise-3-—-Compute-the-Height-of-the-Tree">
-<h3>Exercise 3 — Compute the Height of the Tree<a class="headerlink" href="#Exercise-3-—-Compute-the-Height-of-the-Tree" title="Link to this heading"></a></h3>
+<h2>Exercise 3 — Compute the Height of the Tree<a class="headerlink" href="#Exercise-3-—-Compute-the-Height-of-the-Tree" title="Link to this heading"></a></h2>
 <p>Compute the height of a binary tree where a leaf node has height one and an empty subtree has height zero. Implement a recursive method that calculates the height and an iterative method using a stack or queue to track node depth. Both methods should return the same height.</p>
 <p>Example: A tree with a root node and two children has height 2. Calling the method on the root node should return 2.</p>
 <p>Template for your code:</p>
@@ -310,9 +301,9 @@ def height_iter(self):
 </div>
 </section>
 <section id="Exercise-4.1-—-Check-if-a-node-has-a-self-edge-in-a-Graph">
-<h3>Exercise 4.1 — Check if a node has a self edge in a Graph<a class="headerlink" href="#Exercise-4.1-—-Check-if-a-node-has-a-self-edge-in-a-Graph" title="Link to this heading"></a></h3>
+<h2>Exercise 4.1 — Check if a node has a self edge in a Graph<a class="headerlink" href="#Exercise-4.1-—-Check-if-a-node-has-a-self-edge-in-a-Graph" title="Link to this heading"></a></h2>
 <p>Consider the DiGraphLL class provided above. Use this code below to generate the following graph:</p>
-<img alt="Screenshot from 2025-12-05 11-47-47.png" src="notebooks/attachment:Screenshot%20from%202025-12-05%2011-47-47.png" />
+<img alt="../_images/grahpEx.png" src="../_images/grahpEx.png" />
 <p>Code:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -371,7 +362,7 @@ Nodes: {&#39;Node_1&#39;: {&#39;Node_2&#39;: 2, &#39;Node_4&#39;: 5}, &#39;Node_
 </div>
 </section>
 <section id="Exercise-4.2-—-Check-if-a-node-is-isolated-(no-edges-with-other-nodes)">
-<h3>Exercise 4.2 — Check if a node is isolated (no edges with other nodes)<a class="headerlink" href="#Exercise-4.2-—-Check-if-a-node-is-isolated-(no-edges-with-other-nodes)" title="Link to this heading"></a></h3>
+<h2>Exercise 4.2 — Check if a node is isolated (no edges with other nodes)<a class="headerlink" href="#Exercise-4.2-—-Check-if-a-node-is-isolated-(no-edges-with-other-nodes)" title="Link to this heading"></a></h2>
 <p>Implement a method called <em>isolatedNodes()</em> in the DiGraphLL class that returns a list of all nodes that are completely isolated from the graph. A node is considered isolated if it has no incoming or outgoing edges to other nodes. Self-loops (edges from the node to itself) should not count as connections: nodes with self-loops are still considered isolated.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>def isolatedNodes(self):
     pass
@@ -389,7 +380,6 @@ Nodes: {&#39;Node_1&#39;: {&#39;Node_2&#39;: 2, &#39;Node_4&#39;: 5}, &#39;Node_
 </pre></div>
 </div>
 </div>
-</section>
 </section>
 </section>
 
