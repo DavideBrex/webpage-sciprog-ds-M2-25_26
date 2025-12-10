@@ -24,3 +24,4 @@ Email: davide.bressan-1@unitn.it
         Practical 8 <notebooks/M2_practical8.ipynb>
         Practical 9 <notebooks/M2_practical9.ipynb>
         Extra exercises <notebooks/M2_extra_exercises.ipynb>
+        Extra exercises sol <notebooks/M2_extra_excercises_sol.ipynb>
