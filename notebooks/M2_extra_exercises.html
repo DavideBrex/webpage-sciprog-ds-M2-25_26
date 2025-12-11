@@ -65,6 +65,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#Exercise-3-—-Compute-the-Height-of-the-Tree">Exercise 3 — Compute the Height of the Tree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Exercise-4.1-—-Check-if-a-node-has-a-self-edge-in-a-Graph">Exercise 4.1 — Check if a node has a self edge in a Graph</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Exercise-4.2-—-Check-if-a-node-is-isolated-(no-edges-with-other-nodes)">Exercise 4.2 — Check if a node is isolated (no edges with other nodes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise-5">Exercise 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Excerise-6">Excerise 6</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="M2_extra_excercises_sol.html">     Extra exercises sol</a></li>
@@ -380,6 +382,223 @@ Nodes: {&#39;Node_1&#39;: {&#39;Node_2&#39;: 2, &#39;Node_4&#39;: 5}, &#39;Node_
 
 <span class="k">assert</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">isolatedNodes</span><span class="p">()</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;Node_3&#39;</span><span class="p">,</span> <span class="s1">&#39;Node_7&#39;</span><span class="p">])</span>
 </pre></div>
+</div>
+</div>
+</section>
+<section id="Exercise-5">
+<h2>Exercise 5<a class="headerlink" href="#Exercise-5" title="Link to this heading"></a></h2>
+<p>A Binary Search Tree (BST) is a binary tree with the following properties: - The left subtree of a node contains only nodes with values lower than that of the node. - The right subtree of a node contains only nodes with values greater than the node’s. - No duplicate nodes are allowed.</p>
+<p>Look at the BST implemented in the code chunck below. Please check carefully how the class is implemented since it might slightly differ from the one you have seen during the practical class. The BST structure created by the script is shown below:</p>
+<img alt="../_images/BST_extraEx.png" src="../_images/BST_extraEx.png" />
+<p>TO DO: We have the BST shown above and a number N. Our task is to find the greatest number (node) in the binary search tree that is less than or equal to N. You are asked to implement the missing method <strong>findLargestSmallerKey(root, N)</strong></p>
+<p>This method finds the largest key (value of node, as integer) in the BST that is smaller than N. If such a number doesn’t exist, return -1.</p>
+<div class="line-block">
+<div class="line"><strong>Examples:</strong> Input : N = 24</div>
+<div class="line">Output : 21</div>
+<div class="line">(searching for 24 will be like 5-&gt;12-&gt;21)</div>
+<div class="line">Input : N = 4</div>
+<div class="line">Output : 3</div>
+<div class="line">(searching for 4 will be like 5-&gt;2-&gt;3)</div>
+<div class="line">Input : N = 10</div>
+<div class="line">Output : 9</div>
+<div class="line">(searching for 10 will be like 5-&gt;12-&gt;9)</div>
+</div>
+<p><strong>TIPS</strong>: There are two key parts for the algorithm.</p>
+<p><strong>Part 1</strong>: traversing the tree Starting from the root, for each node we choose its left or its right child as the next step, based on a comparison between that node’s key and N: If the current node holds a key smaller than N, we proceed to its right subtree looking for larger keys. Otherwise, we proceed to its left subtree looking for smaller keys.</p>
+<p><strong>Part 2</strong>: finding the key During this iteration, when the current key is smaller than N, we store it as our result and keep looking for a larger key that is still smaller than N.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BinarySearchTree</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__parent</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">getValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__data</span>
+    <span class="k">def</span> <span class="nf">setValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newValue</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="o">=</span> <span class="n">newValue</span>
+
+    <span class="k">def</span> <span class="nf">getParent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parent</span>
+    <span class="k">def</span> <span class="nf">setParent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__parent</span> <span class="o">=</span> <span class="n">tree</span>
+
+    <span class="k">def</span> <span class="nf">getRight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__right</span>
+    <span class="k">def</span> <span class="nf">getLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__left</span>
+
+    <span class="k">def</span> <span class="nf">insertRight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">=</span> <span class="n">tree</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">setParent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">insertLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">=</span> <span class="n">tree</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">setParent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="c1"># START CODING BELOW HERE:</span>
+
+    <span class="k">def</span> <span class="nf">findLargestSmallerKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="c1">#to implement</span>
+
+
+        <span class="k">return</span> <span class="n">result</span>
+
+
+
+<span class="k">def</span> <span class="nf">createBST</span><span class="p">(</span><span class="n">intList</span><span class="p">):</span>
+
+    <span class="n">BST</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">intList</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">BST</span> <span class="o">=</span> <span class="n">BinarySearchTree</span><span class="p">(</span><span class="n">intList</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">intList</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">cur_el</span> <span class="o">=</span> <span class="n">BST</span>
+            <span class="n">alreadyPresent</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">prev_el</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">while</span> <span class="n">cur_el</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">prev_el</span> <span class="o">=</span> <span class="n">cur_el</span>
+                <span class="n">cv</span> <span class="o">=</span> <span class="n">cur_el</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span>
+                <span class="k">if</span>  <span class="n">cv</span> <span class="o">&gt;</span> <span class="n">el</span><span class="p">:</span>
+                    <span class="n">cur_el</span> <span class="o">=</span> <span class="n">cur_el</span><span class="o">.</span><span class="n">getLeft</span><span class="p">()</span>
+                <span class="k">elif</span> <span class="n">cv</span> <span class="o">&lt;</span> <span class="n">el</span><span class="p">:</span>
+                    <span class="n">cur_el</span> <span class="o">=</span> <span class="n">cur_el</span><span class="o">.</span><span class="n">getRight</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">alreadyPresent</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">break</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">alreadyPresent</span><span class="p">:</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">BinarySearchTree</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">setParent</span><span class="p">(</span><span class="n">prev_el</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">prev_el</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">el</span><span class="p">:</span>
+                    <span class="n">prev_el</span><span class="o">.</span><span class="n">insertLeft</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">prev_el</span><span class="o">.</span><span class="n">insertRight</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">BST</span>
+
+
+<span class="k">def</span> <span class="nf">printTree</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="n">cur</span> <span class="o">=</span> <span class="n">root</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[(</span><span class="n">cur</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>
+    <span class="n">tabs</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">cur</span><span class="p">,</span> <span class="n">lev</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cur</span><span class="o">.</span><span class="n">getRight</span><span class="p">()</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2"> (r)-&gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">*</span><span class="n">lev</span><span class="p">,</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getValue</span><span class="p">(),</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getRight</span><span class="p">()</span><span class="o">.</span><span class="n">getValue</span><span class="p">()))</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur</span><span class="o">.</span><span class="n">getRight</span><span class="p">(),</span> <span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">cur</span><span class="o">.</span><span class="n">getLeft</span><span class="p">()</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2"> (l)-&gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">*</span><span class="n">lev</span><span class="p">,</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getValue</span><span class="p">(),</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getLeft</span><span class="p">()</span><span class="o">.</span><span class="n">getValue</span><span class="p">()))</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur</span><span class="o">.</span><span class="n">getLeft</span><span class="p">(),</span> <span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+
+
+<span class="c1"># DO NOT modify code below:</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">inList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">25</span><span class="p">]</span>
+
+    <span class="n">BST</span> <span class="o">=</span> <span class="n">createBST</span><span class="p">(</span><span class="n">inList</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tree:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">printTree</span><span class="p">(</span><span class="n">BST</span><span class="p">)</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Greatest number in the BST that is less than or equal to 24 --&gt; </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">BST</span><span class="o">.</span><span class="n">findLargestSmallerKey</span><span class="p">(</span><span class="mi">24</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Greatest number in the BST that is less than or equal to 4 --&gt; </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">BST</span><span class="o">.</span><span class="n">findLargestSmallerKey</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Greatest number in the BST that is less than or equal to 10 --&gt; </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">BST</span><span class="o">.</span><span class="n">findLargestSmallerKey</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+    <span class="k">assert</span> <span class="n">BST</span><span class="o">.</span><span class="n">findLargestSmallerKey</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span> <span class="o">==</span> <span class="mi">21</span> <span class="p">,</span> <span class="s2">&quot;It should be 21&quot;</span>
+
+    <span class="k">assert</span> <span class="n">BST</span><span class="o">.</span><span class="n">findLargestSmallerKey</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;It should be 3&quot;</span>
+
+    <span class="k">assert</span> <span class="n">BST</span><span class="o">.</span><span class="n">findLargestSmallerKey</span><span class="p">(</span> <span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;It should be 9&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Excerise-6">
+<h2>Excerise 6<a class="headerlink" href="#Excerise-6" title="Link to this heading"></a></h2>
+<p>Implement the <strong>sort()</strong> method of the class <strong>PancakeSort</strong> in the code below.</p>
+<p>To test the implementation use the code below, which is equipped with a main code that tests the method by sorting the list [7, 5, 10, -11, 3, -4, 99, 1].</p>
+<div class="line-block">
+<div class="line">Imagine you have a stack (<strong>not</strong> the stack data structure) of pancakes of different sizes, and you want to arrange them in order from the largest at the bottom to the smallest at the top.</div>
+<div class="line">Here’s how Pancake Sort works: Start with your stack of unsorted pancakes. The stack represents the list of numbers that you want to sort (it is not an actual stack data structure).</div>
+</div>
+<ol class="arabic simple">
+<li><p>Iterate over the stack of pancakes (list of numbers) starting from the bottom pancake (end of the list) and going towards the top (first pancake). This because at the end of each iteration the biggest pancake (number) will be moved to the bottom of the stack (last position in the list), and we want to reduce the size of the list we work with at each iteration.</p></li>
+<li><p>At each iteration, identify the biggest pancake (number) and get its position X.</p></li>
+<li><p>If the biggest pancake is not already at the top, flip the unsorted stack to move it there (in the first position of the list). This means that you must flip the sub-list that goes from 0 to position X.</p></li>
+<li><p>Now, flip the entire stack (list) so that the biggest pancake is now at the bottom (end of the list).</p></li>
+<li><p>Repeat the process (step 1 to 3), focusing on a smaller stack each time (excluding the pancake you’ve already sorted, which is now at the end).</p></li>
+<li><p>Continue until all pancakes are in order (i.e. when you reach the first position in the list)</p></li>
+</ol>
+<p>Keep in mind that with flip we mean to reverse the order of the elements in the list (or sub-list). Below there is an example of how the sorting works:</p>
+<img alt="../_images/pancackeSorting.png" src="../_images/pancackeSorting.png" />
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SortingAlgorithm</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparisons</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operations</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
+
+    <span class="k">def</span> <span class="nf">getData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">getOperations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">operations</span>
+
+    <span class="k">def</span> <span class="nf">getComparisons</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparisons</span>
+
+    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+<span class="k">class</span> <span class="nc">PancakeSort</span><span class="p">(</span><span class="n">SortingAlgorithm</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Implement the sort method for the Pancake Sort algorithm</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span> <span class="c1">#remove when implementing method</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span> <span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">insSorter</span> <span class="o">=</span> <span class="n">PancakeSort</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">insSorter</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<br/></pre></div>
 </div>
 </div>
 </section>
