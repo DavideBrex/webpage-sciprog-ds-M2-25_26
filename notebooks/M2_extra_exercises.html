@@ -391,7 +391,7 @@ Nodes: {&#39;Node_1&#39;: {&#39;Node_2&#39;: 2, &#39;Node_4&#39;: 5}, &#39;Node_
 <p>A Binary Search Tree (BST) is a binary tree with the following properties: - The left subtree of a node contains only nodes with values lower than that of the node. - The right subtree of a node contains only nodes with values greater than the node’s. - No duplicate nodes are allowed.</p>
 <p>Look at the BST implemented in the code chunck below. Please check carefully how the class is implemented since it might slightly differ from the one you have seen during the practical class. The BST structure created by the script is shown below:</p>
 <img alt="../_images/BST_extraEx.png" src="../_images/BST_extraEx.png" />
-<p>TO DO: We have the BST shown above and a number N. Our task is to find the greatest number (node) in the binary search tree that is less than or equal to N. You are asked to implement the missing method <strong>findLargestSmallerKey(root, N)</strong></p>
+<p>TO DO: We have the BST shown above and a number N. Our task is to find the greatest number (node) in the binary search tree that is less than or equal to N. You are asked to implement the missing method <strong>findLargestSmallerKey(self, N)</strong></p>
 <p>This method finds the largest key (value of node, as integer) in the BST that is smaller than N. If such a number doesn’t exist, return -1.</p>
 <div class="line-block">
 <div class="line"><strong>Examples:</strong> Input : N = 24</div>
@@ -405,8 +405,14 @@ Nodes: {&#39;Node_1&#39;: {&#39;Node_2&#39;: 2, &#39;Node_4&#39;: 5}, &#39;Node_
 <div class="line">(searching for 10 will be like 5-&gt;12-&gt;9)</div>
 </div>
 <p><strong>TIPS</strong>: There are two key parts for the algorithm.</p>
-<p><strong>Part 1</strong>: traversing the tree Starting from the root, for each node we choose its left or its right child as the next step, based on a comparison between that node’s key and N: If the current node holds a key smaller than N, we proceed to its right subtree looking for larger keys. Otherwise, we proceed to its left subtree looking for smaller keys.</p>
-<p><strong>Part 2</strong>: finding the key During this iteration, when the current key is smaller than N, we store it as our result and keep looking for a larger key that is still smaller than N.</p>
+<div class="line-block">
+<div class="line"><strong>Part 1</strong>: traversing the tree</div>
+<div class="line">Starting from the root, for each node we choose its left or its right child as the next step, based on a comparison between that node’s key and N: If the current node holds a key smaller than N, we proceed to its right subtree looking for larger keys. Otherwise, we proceed to its left subtree looking for smaller keys.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Part 2</strong>: finding the key</div>
+<div class="line">During this iteration, when the current key is smaller than N, we store it as our result and keep looking for a larger key that is still smaller than N.</div>
+</div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
