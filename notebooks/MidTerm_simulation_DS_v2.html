@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 2 - Midterm simulation test &mdash; sciprog-ds-M2-25_26  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Module 2, Extra exercises" href="M2_extra_excercises_sol.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            sciprog-ds-M2-25_26
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">     Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical1.html">     Practical 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical2.html">     Practical 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical3.html">     Practical 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical4.html">     Practical 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical5.html">     Practical 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical6.html">     Practical 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical7.html">     Practical 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical8.html">     Practical 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical9.html">     Practical 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_practical10.html">     Practical 10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_extra_exercises.html">     Extra exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="M2_extra_excercises_sol.html">     Extra exercises sol</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Midterm exam simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Theoretical-part">Theoretical part</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-1">Exercise 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-2">Exercise 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Practical-part">Practical part</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-3">Exercise 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-4">Exercise 4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sciprog-ds-M2-25_26</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Module 2 - Midterm simulation test</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/notebooks/MidTerm_simulation_DS_v2.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Module-2---Midterm-simulation-test">
+<h1>Module 2 - Midterm simulation test<a class="headerlink" href="#Module-2---Midterm-simulation-test" title="Link to this heading"></a></h1>
+<p>This is the simulation of the second DS MidTerm exam provided in December 2025.</p>
+<p>Please, refer to Prof. Alessandro Romanel for any questions/comments on the theoretical part.</p>
+<p>Solutions for the practical part will be provided later today (or tomorrow).</p>
+<section id="Theoretical-part">
+<h2>Theoretical part<a class="headerlink" href="#Theoretical-part" title="Link to this heading"></a></h2>
+<section id="Exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#Exercise-1" title="Link to this heading"></a></h3>
+<p>Given a list 𝐿 of 𝑛≥3 integer elements, please compute the asymptotic computational complexity of the following function, explaining your reasoning.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_fun</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">R</span> <span class="o">=</span> <span class="n">R</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">R</span> <span class="o">=</span> <span class="n">R</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">tmp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#Exercise-2" title="Link to this heading"></a></h3>
+<p>What is the topological sorting of a directed acyclic graph (DAG)? Briefly describe an algorithm to compute it and provide a possible topological view of the following DAG.</p>
+<img alt="../_images/graph_1_sim.png" src="../_images/graph_1_sim.png" />
+</section>
+</section>
+<section id="Practical-part">
+<h2>Practical part<a class="headerlink" href="#Practical-part" title="Link to this heading"></a></h2>
+<section id="Exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#Exercise-3" title="Link to this heading"></a></h3>
+<p>Bubble sort is a sorting algorithm that compares two adjacent elements and swaps them until they are in the intended order. Just like the movement of air bubbles in the water that rise up to the surface, the maximum element of the array moves to the end in each iteration. Therefore, it is called a <strong>bubble sort</strong>.</p>
+<ol class="arabic simple">
+<li><p>The idea is to scan multiple times the list (from the start) and every time when you find two elements in the wrong order you swap them. If they are in the right order you do nothing.</p></li>
+<li><p>If at the end of a scan you did not swap any elements then your list is sorted</p></li>
+</ol>
+<p>After the first scan the max is at the last position (green color), at the second scan the “second max” is at the second-last position and so on.</p>
+<p>Below you can see and example of the bubble sort execution</p>
+<img alt="../_images/bubb.png" src="../_images/bubb.png" />
+<p><strong>Implement the bubble sort algorithm by filling the sort method below</strong></p>
+<p>Then, test it on a random array of 500 elements and check its correctness.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">SortingAlgorithm</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparisons</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operations</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
+
+    <span class="k">def</span> <span class="nf">getData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">getOperations</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">operations</span>
+
+    <span class="k">def</span> <span class="nf">getComparisons</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparisons</span>
+
+    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+<span class="k">class</span> <span class="nc">BubbleSort</span><span class="p">(</span><span class="n">SortingAlgorithm</span><span class="p">):</span>
+
+
+    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparisons</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">operations</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        to implement</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span> <span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before sorting:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">bubSorter</span> <span class="o">=</span> <span class="n">BubbleSort</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">bubSorter</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After sorting:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Before sorting:
+
+[7, 5, 10, -11, 3, -4, 99, 1]
+After sorting:
+
+[7, 5, 10, -11, 3, -4, 99, 1]
+</pre></div></div>
+</div>
+</section>
+<section id="Exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#Exercise-4" title="Link to this heading"></a></h3>
+<p>A Binary Search Tree (BST) is a binary tree with the following properties:</p>
+<ul class="simple">
+<li><p>The left subtree of a node contains only nodes with values lower than that of the node.</p></li>
+<li><p>The right subtree of a node contains only nodes with values greater than the node’s.</p></li>
+<li><p>No duplicate nodes are allowed.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">Look at the BST implemented in the code chunck below. From the input list, the function <strong>createBST()</strong> generates a BST.</div>
+<div class="line">Please check carefully how the class is implemented since it might slightly differ from the one you have seen during the practical class.</div>
+<div class="line">The BST structure created by the script is shown below:</div>
+</div>
+<img alt="../_images/BST_extraEx.png" src="../_images/BST_extraEx.png" />
+<p><strong>TO DO</strong></p>
+<div class="line-block">
+<div class="line">Implement the <strong>search_interval(self, a, b)</strong> method for the provided <strong>BinarySearchTree</strong> class.</div>
+<div class="line">This function takes the root node of a BST and two integers a and b (where a ≤ b), then returns a sorted list containing all values (nodes) in the tree that fall between a and b (inclusive).</div>
+<div class="line">Example:</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">BST.search_interval(3,10)</span></code> will return [3, 5, 9]</p>
+<p><code class="docutils literal notranslate"><span class="pre">BST.search_interval(18,26)</span></code> will return [19, 21, 25]</p>
+<p><strong>HINTS</strong></p>
+<ul class="simple">
+<li><p>You can both use a <strong>recursive</strong> or <strong>iterative</strong> solutions</p></li>
+<li><p>If you choose the iterative one, consider to use a stack to visit nodes (i.e. save the one to visit, similar to a iterative pre-order DFS).</p>
+<ul>
+<li><p>For each node, check if the node’s <strong>value</strong> falls within the interval <strong>[a, b]</strong>.</p></li>
+<li><p>If so, the value is <strong>added</strong> to the result list.</p></li>
+<li><p>The traversal continues to the <strong>left</strong> child if the current value is greater than <strong>a</strong>, and to the <strong>right child</strong> if the value is less than <strong>b</strong>.</p></li>
+<li><p>The result list is sorted before being returned to ensure ascending order.</p></li>
+</ul>
+</li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BinarySearchTree</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__parent</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">getValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__data</span>
+    <span class="k">def</span> <span class="nf">setValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">newValue</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="o">=</span> <span class="n">newValue</span>
+
+    <span class="k">def</span> <span class="nf">getParent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__parent</span>
+    <span class="k">def</span> <span class="nf">setParent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__parent</span> <span class="o">=</span> <span class="n">tree</span>
+
+    <span class="k">def</span> <span class="nf">getRight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__right</span>
+    <span class="k">def</span> <span class="nf">getLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__left</span>
+
+    <span class="k">def</span> <span class="nf">insertRight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__right</span> <span class="o">=</span> <span class="n">tree</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">setParent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">insertLeft</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__left</span> <span class="o">=</span> <span class="n">tree</span>
+            <span class="n">tree</span><span class="o">.</span><span class="n">setParent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="c1"># START CODING BELOW HERE:</span>
+    <span class="k">def</span> <span class="nf">search_interval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># to implement</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+<span class="k">def</span> <span class="nf">createBST</span><span class="p">(</span><span class="n">intList</span><span class="p">):</span>
+
+    <span class="n">BST</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">intList</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">BST</span> <span class="o">=</span> <span class="n">BinarySearchTree</span><span class="p">(</span><span class="n">intList</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">intList</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">cur_el</span> <span class="o">=</span> <span class="n">BST</span>
+            <span class="n">alreadyPresent</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">prev_el</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">while</span> <span class="n">cur_el</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">prev_el</span> <span class="o">=</span> <span class="n">cur_el</span>
+                <span class="n">cv</span> <span class="o">=</span> <span class="n">cur_el</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span>
+                <span class="k">if</span>  <span class="n">cv</span> <span class="o">&gt;</span> <span class="n">el</span><span class="p">:</span>
+                    <span class="n">cur_el</span> <span class="o">=</span> <span class="n">cur_el</span><span class="o">.</span><span class="n">getLeft</span><span class="p">()</span>
+                <span class="k">elif</span> <span class="n">cv</span> <span class="o">&lt;</span> <span class="n">el</span><span class="p">:</span>
+                    <span class="n">cur_el</span> <span class="o">=</span> <span class="n">cur_el</span><span class="o">.</span><span class="n">getRight</span><span class="p">()</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">alreadyPresent</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">break</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">alreadyPresent</span><span class="p">:</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">BinarySearchTree</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+                <span class="n">node</span><span class="o">.</span><span class="n">setParent</span><span class="p">(</span><span class="n">prev_el</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">prev_el</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">el</span><span class="p">:</span>
+                    <span class="n">prev_el</span><span class="o">.</span><span class="n">insertLeft</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">prev_el</span><span class="o">.</span><span class="n">insertRight</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">BST</span>
+
+
+<span class="k">def</span> <span class="nf">printTree</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="n">cur</span> <span class="o">=</span> <span class="n">root</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[(</span><span class="n">cur</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>
+    <span class="n">tabs</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">cur</span><span class="p">,</span> <span class="n">lev</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cur</span><span class="o">.</span><span class="n">getRight</span><span class="p">()</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2"> (r)-&gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">*</span><span class="n">lev</span><span class="p">,</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getValue</span><span class="p">(),</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getRight</span><span class="p">()</span><span class="o">.</span><span class="n">getValue</span><span class="p">()))</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur</span><span class="o">.</span><span class="n">getRight</span><span class="p">(),</span> <span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">cur</span><span class="o">.</span><span class="n">getLeft</span><span class="p">()</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{}{}</span><span class="s2"> (l)-&gt; </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="o">*</span><span class="n">lev</span><span class="p">,</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getValue</span><span class="p">(),</span>
+                                          <span class="n">cur</span><span class="o">.</span><span class="n">getLeft</span><span class="p">()</span><span class="o">.</span><span class="n">getValue</span><span class="p">()))</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cur</span><span class="o">.</span><span class="n">getLeft</span><span class="p">(),</span> <span class="n">lev</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+
+
+
+<span class="c1"># DO NOT modify code below:</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">inList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">25</span><span class="p">]</span>
+
+    <span class="n">BST</span> <span class="o">=</span> <span class="n">createBST</span><span class="p">(</span><span class="n">inList</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tree:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">printTree</span><span class="p">(</span><span class="n">BST</span><span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">BST</span><span class="o">.</span><span class="n">search_interval</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Values in interval [3,10]: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="n">res</span> <span class="o">==</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="s2">&quot;Test failed!&quot;</span>
+
+    <span class="n">res2</span> <span class="o">=</span> <span class="n">BST</span><span class="o">.</span><span class="n">search_interval</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Values in interval [18,26]: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">res2</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="n">res2</span> <span class="o">==</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span> <span class="s2">&quot;Test failed!&quot;</span>
+<br/><br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Tree:
+
+5 (r)-&gt; 12
+5 (l)-&gt; 2
+        2 (r)-&gt; 3
+        2 (l)-&gt; 1
+        12 (r)-&gt; 21
+        12 (l)-&gt; 9
+                21 (r)-&gt; 25
+                21 (l)-&gt; 19
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NotImplementedError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[1], line 101</span>
+<span class="ansi-green-intense-fg ansi-bold">     98</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Tree:</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">     99</span> printTree(BST)
+<span class="ansi-green-fg">--&gt; 101</span> res <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">BST</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">search_interval</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">3</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">10</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    102</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">Values in interval [3,10]: </span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">.</span>format(res))
+<span class="ansi-green-intense-fg ansi-bold">    103</span> <span class="ansi-bold" style="color: rgb(0,135,0)">assert</span> res <span style="color: rgb(98,98,98)">==</span> [<span style="color: rgb(98,98,98)">3</span>,<span style="color: rgb(98,98,98)">5</span>,<span style="color: rgb(98,98,98)">9</span>], <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Test failed!</span><span style="color: rgb(175,0,0)">&#34;</span>
+
+Cell <span class="ansi-green-fg">In[1], line 36</span>, in <span class="ansi-cyan-fg">BinarySearchTree.search_interval</span><span class="ansi-blue-fg">(self, a, b)</span>
+<span class="ansi-green-intense-fg ansi-bold">     34</span> result <span style="color: rgb(98,98,98)">=</span> []
+<span class="ansi-green-intense-fg ansi-bold">     35</span> <span style="color: rgb(95,135,135)"># to implement</span>
+<span class="ansi-green-fg">---&gt; 36</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">NotImplementedError</span>
+
+<span class="ansi-red-fg">NotImplementedError</span>:
+</pre></div></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="M2_extra_excercises_sol.html" class="btn btn-neutral float-left" title="Module 2, Extra exercises" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Davide Bressan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
