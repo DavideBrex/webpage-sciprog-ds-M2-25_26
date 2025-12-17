@@ -23,8 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Module 2 - Midterm simulation test" href="MidTerm_simulation_DS_v2_sol.html" />
-    <link rel="prev" title="Module 2, Extra exercises" href="M2_extra_excercises_sol.html" /> 
+    <link rel="prev" title="Module 2 - Midterm simulation test" href="MidTerm_simulation_DS_v2.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -61,7 +60,8 @@
 <li class="toctree-l1"><a class="reference internal" href="M2_practical10.html">     Practical 10</a></li>
 <li class="toctree-l1"><a class="reference internal" href="M2_extra_exercises.html">     Extra exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="M2_extra_excercises_sol.html">     Extra exercises sol</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">     Midterm exam simulation</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="MidTerm_simulation_DS_v2.html">     Midterm exam simulation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">     Midterm exam simulation sol</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Theoretical-part">Theoretical part</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Exercise-1">Exercise 1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Exercise-2">Exercise 2</a></li>
@@ -74,7 +74,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="MidTerm_simulation_DS_v2_sol.html">     Midterm exam simulation sol</a></li>
 </ul>
 
         </div>
@@ -93,7 +92,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Module 2 - Midterm simulation test</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/notebooks/MidTerm_simulation_DS_v2.ipynb.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/notebooks/MidTerm_simulation_DS_v2_sol.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -103,8 +102,8 @@
              
   <section id="Module-2---Midterm-simulation-test">
 <h1>Module 2 - Midterm simulation test<a class="headerlink" href="#Module-2---Midterm-simulation-test" title="Link to this heading"></a></h1>
-<p>This is the simulation of the second DS MidTerm exam provided in December 2025.</p>
-<p>Please, refer to Prof. Alessandro Romanel for any questions/comments on the theoretical part.</p>
+<p>This is the second DS MidTerm exam provided in December 2023.</p>
+<p>Please, refer to Prof. Alessandro Romanel for any comments on the theoretical part.</p>
 <p>Solutions for the practical part will be provided later today (or tomorrow).</p>
 <section id="Theoretical-part">
 <h2>Theoretical part<a class="headerlink" href="#Theoretical-part" title="Link to this heading"></a></h2>
@@ -154,7 +153,7 @@
 <p><strong>Implement the bubble sort algorithm by filling the sort method below</strong></p>
 <p>Then, test it on a random array of 500 elements and check its correctness.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -180,13 +179,23 @@
 
 <span class="k">class</span> <span class="nc">BubbleSort</span><span class="p">(</span><span class="n">SortingAlgorithm</span><span class="p">):</span>
 
-
     <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">comparisons</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">operations</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        to implement</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="c1">#stop if no no swaps are found in an iteration</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">swapped</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                    <span class="n">swapped</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">operations</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">comparisons</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">swapped</span><span class="p">:</span>
+                <span class="k">break</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -198,6 +207,28 @@
     <span class="n">bubSorter</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After sorting:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+    <span class="n">bubSorter</span> <span class="o">=</span> <span class="n">BubbleSort</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">bubSorter</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Number of elements: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of comparisons: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bubSorter</span><span class="o">.</span><span class="n">getComparisons</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of swaps: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bubSorter</span><span class="o">.</span><span class="n">getOperations</span><span class="p">()))</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2000</span><span class="p">):</span>
+        <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+    <span class="n">bubSorter</span> <span class="o">=</span> <span class="n">BubbleSort</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">bubSorter</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Number of elements: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of comparisons: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bubSorter</span><span class="o">.</span><span class="n">getComparisons</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of swaps: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bubSorter</span><span class="o">.</span><span class="n">getOperations</span><span class="p">()))</span>
+
+    <span class="n">test</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">test</span> <span class="o">=</span> <span class="n">test</span> <span class="ow">and</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">el</span><span class="p">]</span><span class="o">&lt;=</span> <span class="n">d</span><span class="p">[</span><span class="n">el</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
 <br/><br/></pre></div>
 </div>
 </div>
@@ -211,7 +242,15 @@ Before sorting:
 [7, 5, 10, -11, 3, -4, 99, 1]
 After sorting:
 
-[7, 5, 10, -11, 3, -4, 99, 1]
+[-11, -4, 1, 3, 5, 7, 10, 99]
+
+Number of elements: 1000
+Number of comparisons: 499290
+Number of swaps: 242981
+
+Number of elements: 2000
+Number of comparisons: 1998054
+Number of swaps: 985687
 </pre></div></div>
 </div>
 </section>
@@ -232,7 +271,7 @@ After sorting:
 <p><strong>TO DO</strong></p>
 <div class="line-block">
 <div class="line">Implement the <strong>search_interval(self, a, b)</strong> method for the provided <strong>BinarySearchTree</strong> class.</div>
-<div class="line">This function takes the root node of a BST and two integers a and b (where a ≤ b), then returns a sorted list containing all values (nodes) in the tree that fall between a and b (inclusive).</div>
+<div class="line">This function takes the root node of a BST and two integers a and b (where a ≤ b), then returns a sorted list containing all values (nodes) in the tree that fall between a and b inclusive.</div>
 <div class="line">Example:</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">BST.search_interval(3,10)</span></code> will return [3, 5, 9]</p>
@@ -250,7 +289,7 @@ After sorting:
 </li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BinarySearchTree</span><span class="p">:</span>
@@ -286,9 +325,45 @@ After sorting:
 
     <span class="c1"># START CODING BELOW HERE:</span>
     <span class="k">def</span> <span class="nf">search_interval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+
+        <span class="c1">#iterative version:</span>
         <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="c1"># to implement</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">result</span>
+
+        <span class="n">stack</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">getValue</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">:</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">getLeft</span><span class="p">())</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">getRight</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="c1">#recursive version:</span>
+
+        <span class="c1"># greaterThanMin = a &lt; self.__data</span>
+        <span class="c1"># lowerThanMax = b &gt; self.__data</span>
+
+        <span class="c1"># elements = []</span>
+
+        <span class="c1"># if greaterThanMin:</span>
+        <span class="c1">#     if (self.__left != None):</span>
+        <span class="c1">#         elements.extend(self.__left.search_interval(a, b))</span>
+
+        <span class="c1"># if (a &lt;= self.__data &lt;= b):</span>
+        <span class="c1">#     elements.append(self.__data)</span>
+
+        <span class="c1"># if lowerThanMax:</span>
+        <span class="c1">#     if (self.__right != None):</span>
+        <span class="c1">#         elements.extend(self.__right.search_interval(a, b))</span>
+
+        <span class="c1"># return(elements)</span>
+
 
 
 <span class="k">def</span> <span class="nf">createBST</span><span class="p">(</span><span class="n">intList</span><span class="p">):</span>
@@ -353,6 +428,7 @@ After sorting:
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tree:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">printTree</span><span class="p">(</span><span class="n">BST</span><span class="p">)</span>
 
+    <span class="c1">#CHECKS!</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">BST</span><span class="o">.</span><span class="n">search_interval</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Values in interval [3,10]: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
     <span class="k">assert</span> <span class="n">res</span> <span class="o">==</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span> <span class="s2">&quot;Test failed!&quot;</span>
@@ -363,7 +439,7 @@ After sorting:
 <br/><br/><br/></pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
+<div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
@@ -378,28 +454,10 @@ Tree:
         12 (l)-&gt; 9
                 21 (r)-&gt; 25
                 21 (l)-&gt; 19
-</pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NotImplementedError</span>                       Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[1], line 101</span>
-<span class="ansi-green-intense-fg ansi-bold">     98</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Tree:</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">&#34;</span>)
-<span class="ansi-green-intense-fg ansi-bold">     99</span> printTree(BST)
-<span class="ansi-green-fg">--&gt; 101</span> res <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">BST</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">search_interval</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">3</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">10</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    102</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span class="ansi-bold" style="color: rgb(175,95,0)">\n</span><span style="color: rgb(175,0,0)">Values in interval [3,10]: </span><span class="ansi-bold" style="color: rgb(175,95,135)">{}</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(98,98,98)">.</span>format(res))
-<span class="ansi-green-intense-fg ansi-bold">    103</span> <span class="ansi-bold" style="color: rgb(0,135,0)">assert</span> res <span style="color: rgb(98,98,98)">==</span> [<span style="color: rgb(98,98,98)">3</span>,<span style="color: rgb(98,98,98)">5</span>,<span style="color: rgb(98,98,98)">9</span>], <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Test failed!</span><span style="color: rgb(175,0,0)">&#34;</span>
 
-Cell <span class="ansi-green-fg">In[1], line 36</span>, in <span class="ansi-cyan-fg">BinarySearchTree.search_interval</span><span class="ansi-blue-fg">(self, a, b)</span>
-<span class="ansi-green-intense-fg ansi-bold">     34</span> result <span style="color: rgb(98,98,98)">=</span> []
-<span class="ansi-green-intense-fg ansi-bold">     35</span> <span style="color: rgb(95,135,135)"># to implement</span>
-<span class="ansi-green-fg">---&gt; 36</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">NotImplementedError</span>
+Values in interval [3,10]: [3, 5, 9]
 
-<span class="ansi-red-fg">NotImplementedError</span>:
+Values in interval [18,26]: [19, 21, 25]
 </pre></div></div>
 </div>
 </section>
@@ -410,8 +468,7 @@ Cell <span class="ansi-green-fg">In[1], line 36</span>, in <span class="ansi-cya
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="M2_extra_excercises_sol.html" class="btn btn-neutral float-left" title="Module 2, Extra exercises" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="MidTerm_simulation_DS_v2_sol.html" class="btn btn-neutral float-right" title="Module 2 - Midterm simulation test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="MidTerm_simulation_DS_v2.html" class="btn btn-neutral float-left" title="Module 2 - Midterm simulation test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
